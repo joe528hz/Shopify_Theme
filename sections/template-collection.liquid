@@ -1,0 +1,22 @@
+<div>
+  {% paginate collection.products by 6 %}
+    <h1>{{ collection.title }}</h1>
+    <div class="products__grid">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product%}
+      {% else %}
+        <p>There are no products inside this collection.</p>
+      {% endfor %}
+    </div>
+
+    {% render 'pagination', pagination: paginate %}
+  {% endpaginate %}
+</div>
+
+
+{% stylesheet %}
+  .products__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+{% endstylesheet %}
