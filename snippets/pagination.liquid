@@ -1,0 +1,6 @@
+{% if pagination.pages > 0 %}
+  <nav role="navigation">
+    <a href="{{ pagination.previous }}">{{ pagination.previous.title }}</a>
+    <a href="{{ pagination.next }}">{{ pagination.next.title }}</a>
+  </nav>
+{% endif %}

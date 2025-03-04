@@ -24,7 +24,7 @@
           "type": "article_image"
         }
       },
-      "block_order": ["title", "author", "date", "image", "content"]
+      "block_order": ["image", "title", "author", "date", "content"]
     }
   },
   "order": ["template"]
