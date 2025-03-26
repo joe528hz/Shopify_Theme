@@ -1,4 +1,8 @@
 <div class="contact__form-container">
+  {% if section.settings.contact_form_title != blank %}
+      <h2>{{ section.settings.contact_form_title }}</h2>
+  {% endif %}
+
   {% form 'contact' %}
     {% if form.errors %}
       <div>
@@ -31,6 +35,13 @@
 {% schema %}
 {
   "name": "Contact form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "contact_form_title",
+      "label": "Contact form title",
+    }
+  ],
   "presets": [
     {
       "name": "Contact form"
