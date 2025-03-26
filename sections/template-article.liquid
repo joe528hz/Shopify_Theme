@@ -59,7 +59,7 @@
     {% form 'new_comment', article %}
       {% if form.errors %}
         <div>
-          {% render 'icon-faled' %}
+          {% render 'icon-failed' %}
           <p>Oh no ! your comment was not posted</p>
         </div>
         <ul>
@@ -69,7 +69,7 @@
         </ul>
       {% elsif form.posted_successfully? %}
         {% render 'icon-success' %}
-        <p>Comment is posted successfull</p>
+        <p>Comment is posted successfully</p>
       {% endif %}
       <div>
         <label for="comment_autor">Name</label>

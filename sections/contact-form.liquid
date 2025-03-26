@@ -1,5 +1,19 @@
 <div class="contact__form-container">
   {% form 'contact' %}
+    {% if form.errors %}
+      <div>
+        {% render 'icon-failed' %}
+        <p>Oh no ! Message not sent.</p>
+      </div>
+      <ul>
+        {% for error in form.errors %}
+          <li><span>{{ form.errors.messages[error] }}</span></li>
+        {% endfor %}
+      </ul>
+    {% elsif form.posted_successfully? %}
+      {% render 'icon-success' %}
+      <p>Message sent successfully</p>
+    {% endif %}
     <label for="contact_name">Name</label>
     <input type="text" name="contact[name]" placeholder="Name" id="contact_name">
 
