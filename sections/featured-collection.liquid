@@ -3,6 +3,10 @@
   <div>
     {% for product in section.settings.featured_collection.products  limit: section.settings.number_of_products_to_show%}
       {% render 'product-card' product: product%}
+    {% else %}
+      {% for item in (1..4) %}
+        {% render 'product-card-placeholder' %}
+      {% endfor %}
     {% endfor %}
   </div>
 </div>
@@ -31,6 +35,11 @@
         "max": 12,
         "default": 4,
         "label": "Number of products to show"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured collection"
       }
     ]
 }
