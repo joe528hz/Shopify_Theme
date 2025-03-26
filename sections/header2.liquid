@@ -28,14 +28,29 @@
 
       <!-- Icons Section -->
       <ul class="header--icons">
-        <li><a href="#" class="icon-link">{% render 'icon-search' %}</a></li>
-        <li><a href="/account" class="icon-link">{% render 'icon-account' %}</a></li>
-        <li><a href="/wishlist" class="icon-link">{% render 'icon-wishlist' %}</a></li>
-        <li><a href="/cart" class="icon-link">{% render 'icon-cart' %}</a></li>
+        <li><a href="javascript:void(0);" class="icon-link" id="search-icon">{% render 'icon-search' %}</a></li>
+        {% if shop.customer_accounts_enabled %}
+          <li>
+            <a href="{{ routes.account_login_url }}" class="icon-link">{% render 'icon-account' %}</a>
+          </li>
+        {% endif %}
+        <li><a href="{{ pages['wishlist'].url }}" class="icon-link">{% render 'icon-wishlist' %}</a></li>
+        <li><a href="{{ routes.cart_url }}" class="icon-link">{% render 'icon-cart' %}</a></li>
       </ul>
     </div>
   </div>
 </div>
+
+<div id="search-container" class="search-hidden">
+  <form action="{{ routes.search_url }}" method="get" role="search">
+    <input type="text" name="q" placeholder="Search..." />
+    <button type="submit">
+      {% render 'icon-search' %}
+    </button>
+    <span id="search-close">✖</span>
+  </form>
+</div>
+
 
 <div class="header--nav-overlay"></div>
 

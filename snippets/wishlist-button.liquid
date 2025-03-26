@@ -1,0 +1,33 @@
+<button class="wishlist-btn"
+  data-product-id="{{ product.id }}"
+  data-title="{{ product.title }}"
+  data-url="{{ product.url }}"
+  data-image="{{ product.featured_image | img_url: 'small' }}">
+  &#x2764;
+</button>
+
+<style>
+  .wishlist-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray; /* Default gray (unselected) */
+    transition: color 0.3s ease;
+  }
+  .wishlist-btn.active {
+    color: red; /* Turns red when active */
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => { // Ensure the DOM is fully loaded
+      document.querySelectorAll(".wishlist-btn").forEach(button => {
+        button.addEventListener("click", function () {
+          this.classList.toggle("active");
+        });
+      });
+    }, 500); // Delay for Shopify rendering
+  });
+</script>

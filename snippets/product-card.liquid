@@ -15,4 +15,5 @@
     <a href="{{ product.url }}">{{ product.title }}</a>
     <p>{{ product.price |  money }}</p>
   </div>
+  {% render 'wishlist-button', product: product %}
 </div>
