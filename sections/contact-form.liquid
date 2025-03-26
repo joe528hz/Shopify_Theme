@@ -6,11 +6,11 @@
         <p>Oh no ! Message not sent.</p>
       </div>
       <ul>
-        {% for error in form.errors %}
-          <li><span>{{ form.errors.messages[error] }}</span></li>
+        {% for field in form.errors %}
+          <li><span>{{ form.errors.messages[field] }}</span></li>
         {% endfor %}
       </ul>
-    {% elsif form.posted_successfully? %}
+    {% else %}
       {% render 'icon-success' %}
       <p>Message sent successfull</p>
     {% endif %}
