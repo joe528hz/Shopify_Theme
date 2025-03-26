@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "sections": {
     "template": {
@@ -7,25 +6,3 @@
   },
   "order": [ "template" ]
 }
-=======
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
-{
-  "sections": {
-    "base": {
-      "type": "main-page",
-      "settings": {}
-    }
-  },
-  "order": [
-    "base"
-  ]
-}
->>>>>>> b1ef8801a755eb207034b9e7ea01b21c1547bbe0
