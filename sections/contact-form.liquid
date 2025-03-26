@@ -1,0 +1,25 @@
+<div class="contact__form-container">
+  {% form 'contact' %}
+    <label for="contact_name">Name</label>
+    <input type="text" name="contact[name]" placeholder="Name" id="contact_name">
+
+    <label for="contact_email">Email</label>
+    <input type="email" name="contact[email]" placeholder="Email" id="contact_email">
+
+    <label for="contact_message">Message</label>
+    <textarea name="contact[body]" id="contact_message" placeholder="Message"></textarea>
+
+    <input type="submit" value="Submit">
+  {% endform %}
+</div>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "presets": [
+    {
+      "name": "Contact form"
+    }
+  ]
+}
+{% endschema %}

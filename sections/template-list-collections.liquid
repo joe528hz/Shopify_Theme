@@ -1,1 +1,39 @@
-<h1>Hello World</h1>
+<di class="collection__list-container">
+  <h1>{{ section.settings.title }}</h1>
+  <div class="collection__lists">
+    {% for collection in collections %}
+      {% if collection.all_products_count > 0 %}
+        <div class="collection__card">
+          <a href="{{ collection.url }}">
+            <div>
+              {% if collection.featured_image != blank %}
+                {% assign collection_image = collection.featured_image %}
+              {% else %}
+                  {% assign collection_image = collection.products.first.image %}
+              {% endif %}
+
+              <img src="{{ collection_image |  img_url: 'medium' }}" alt="{{ collection.title | escape }}">
+            </div>
+          </a>
+          <h2>{{ collection.title }}</h2>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Template List Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Collections"
+    }
+    ]
+}
+{% endschema %}
