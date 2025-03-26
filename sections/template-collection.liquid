@@ -1,5 +1,5 @@
 <div>
-  {% paginate collection.products by 6 %}
+  {% paginate collection.products by section.settings.number_of_products_per_page %}
     <h1>{{ collection.title }}</h1>
     <div class="products__grid">
       {% for product in collection.products %}
@@ -20,3 +20,19 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 {% endstylesheet %}
+
+
+{% schema %}
+{
+  "name": "Template Collection",
+  "settings": [
+    {
+      "type": "number",
+      "id": "number_of_products_per_page",
+      "label": "Number of products per page",
+      "default": 6
+    }
+  ]
+
+}
+{% endschema %}
