@@ -13,13 +13,13 @@
       "type": "template-page",
       "settings": {}
     },
-    "contact_form_bWLVM9": {
+    "contact_form_w8RLnz": {
       "type": "contact-form",
       "settings": {}
     }
   },
   "order": [
     "template",
-    "contact_form_bWLVM9"
+    "contact_form_w8RLnz"
   ]
 }
