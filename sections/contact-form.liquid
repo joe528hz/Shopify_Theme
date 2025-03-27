@@ -32,6 +32,20 @@
   {% endform %}
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasErrors = urlParams.has("form_type") && !urlParams.has("contact_posted");
+
+    if (hasErrors && !sessionStorage.getItem("formRefreshed")) {
+      sessionStorage.setItem("formRefreshed", "true");
+      location.reload();
+    } else {
+      sessionStorage.removeItem("formRefreshed"); // Reset after successful form load
+    }
+  });
+</script>
+
 {% schema %}
 {
   "name": "Contact form",
